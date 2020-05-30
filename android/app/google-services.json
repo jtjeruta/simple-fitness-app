@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "497460625218",
+    "firebase_url": "https://simple-fitness-app.firebaseio.com",
+    "project_id": "simple-fitness-app",
+    "storage_bucket": "simple-fitness-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497460625218:android:c9634567d35749d3a592db",
+        "android_client_info": {
+          "package_name": "com.simplefitnessapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497460625218-i82opu7dkplkig0kldm1jmqgpb1va558.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.simplefitnessapp",
+            "certificate_hash": "f6a4d77376473fcca9895751131726894bc02477"
+          }
+        },
+        {
+          "client_id": "497460625218-avrklfi145iprgoqcdovcii2ljt2dju3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAAvEiNgiIyDdVelEHVKq2_9sa7bPPy68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497460625218-avrklfi145iprgoqcdovcii2ljt2dju3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
