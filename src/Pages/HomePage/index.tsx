@@ -13,7 +13,8 @@ import {
   Icon,
   Text,
 } from 'native-base';
-export default class AnatomyExample extends Component {
+
+export default class HomePage extends Component {
   render() {
     return (
       <Container>
@@ -24,17 +25,17 @@ export default class AnatomyExample extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Header</Title>
+            <Title>HomePage</Title>
           </Body>
           <Right />
         </Header>
         <Content>
-          <Text>This is Content Section</Text>
+          <Text>HomePage</Text>
         </Content>
         <Footer>
           <FooterTab>
             <Button full>
-              <Text>Footer</Text>
+              <Text>HomePage</Text>
             </Button>
           </FooterTab>
         </Footer>

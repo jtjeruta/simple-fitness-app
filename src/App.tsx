@@ -1,17 +1,14 @@
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
-
-import AnatomyExample from './Pages';
-
-declare const global: {HermesInternal: null | {}};
+import {StatusBar} from 'react-native';
+import Routes from './Routes';
 
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <AnatomyExample />
-      </SafeAreaView>
+      {/* <SafeAreaView> */}
+      <Routes />
+      {/* </SafeAreaView> */}
     </>
   );
 };
