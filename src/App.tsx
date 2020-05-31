@@ -1,7 +1,9 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+// import {StatusBar} from 'react-native';
+import {ThemeProvider, Button} from 'react-native-elements';
 import {useAuthContext, AuthContextProvider} from './contexts/AuthContext';
-import Routes from './routes';
+import {theme} from './theme';
+// import Routes from './routes';
 
 const App = () => {
   const {initializing} = useAuthContext();
@@ -11,15 +13,18 @@ const App = () => {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <Routes />
+      {/* <StatusBar barStyle="dark-content" /> */}
+      {/* <Routes /> */}
+      <Button title="Hello" />
     </>
   );
 };
 
 const WrappedApp = () => (
   <AuthContextProvider>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </AuthContextProvider>
 );
 
