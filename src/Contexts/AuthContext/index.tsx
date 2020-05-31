@@ -31,17 +31,21 @@ const AuthContextProvider: FunctionComponent = props => {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
+        // eslint-disable-next-line no-console
         console.log('User account created & signed in!');
       })
       .catch(error => {
         if (error.code === 'auth/email-already-in-use') {
+          // eslint-disable-next-line no-console
           console.log('That email address is already in use!');
         }
 
         if (error.code === 'auth/invalid-email') {
+          // eslint-disable-next-line no-console
           console.log('That email address is invalid!');
         }
 
+        // eslint-disable-next-line no-console
         console.error(error);
       });
   }
@@ -50,17 +54,21 @@ const AuthContextProvider: FunctionComponent = props => {
     auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
+        // eslint-disable-next-line no-console
         console.log('User account created & signed in!');
       })
       .catch(error => {
         if (error.code === 'auth/email-already-in-use') {
+          // eslint-disable-next-line no-console
           console.log('That email address is already in use!');
         }
 
         if (error.code === 'auth/invalid-email') {
+          // eslint-disable-next-line no-console
           console.log('That email address is invalid!');
         }
 
+        // eslint-disable-next-line no-console
         console.error(error);
       });
   }
@@ -68,6 +76,7 @@ const AuthContextProvider: FunctionComponent = props => {
   function signOut() {
     auth()
       .signOut()
+      // eslint-disable-next-line no-console
       .then(() => console.log('User signed out!'));
   }
 

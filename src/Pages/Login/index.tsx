@@ -8,8 +8,6 @@ const LoginPage = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  console.log('test');
-
   return (
     <>
       <Form>

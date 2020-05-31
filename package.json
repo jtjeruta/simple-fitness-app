@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint .",
+    "lint": "eslint \"**/*.{tsx, ts, js, jsx}\"",
     "emulator": "emulator -avd Galaxy_Nexus_API_28 -wipe-data"
   },
   "dependencies": {
