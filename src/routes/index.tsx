@@ -15,7 +15,6 @@ const Routes = () => {
         ) : (
           <Scene key="home" component={Dashboard} initial={true} hideNavBar />
         )}
-        {/* <Scene key="about" component={AnatomyExample} title="About" /> */}
       </Scene>
     </Router>
   );
