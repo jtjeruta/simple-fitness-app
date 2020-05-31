@@ -6,5 +6,6 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 0,
     'no-console': 'warn',
+    'react-native/no-inline-styles': 0,
   },
 };

@@ -1,9 +1,9 @@
 import React from 'react';
-// import {StatusBar} from 'react-native';
-import {ThemeProvider, Button} from 'react-native-elements';
+import {StatusBar, SafeAreaView, StyleSheet} from 'react-native';
+import {ThemeProvider} from 'react-native-elements';
 import {useAuthContext, AuthContextProvider} from './contexts/AuthContext';
 import {theme} from './theme';
-// import Routes from './routes';
+import Routes from './routes';
 
 const App = () => {
   const {initializing} = useAuthContext();
@@ -13,12 +13,19 @@ const App = () => {
 
   return (
     <>
-      {/* <StatusBar barStyle="dark-content" /> */}
-      {/* <Routes /> */}
-      <Button title="Hello" />
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView style={styles.container}>
+        <Routes />
+      </SafeAreaView>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 const WrappedApp = () => (
   <AuthContextProvider>
