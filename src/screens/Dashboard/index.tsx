@@ -13,9 +13,9 @@ import {
   Icon,
   Text,
 } from 'native-base';
-import {useAuthContext} from '../../context/AuthContext';
+import {useAuthContext} from '../../contexts/AuthContext';
 
-const HomePage = () => {
+const Dashboard = () => {
   const {signOut} = useAuthContext();
   return (
     <Container>
@@ -44,4 +44,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Dashboard;

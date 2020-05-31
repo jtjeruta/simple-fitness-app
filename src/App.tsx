@@ -1,7 +1,7 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
-import {useAuthContext, AuthContextProvider} from './context/AuthContext';
-import Routes from './route';
+import {useAuthContext, AuthContextProvider} from './contexts/AuthContext';
+import Routes from './routes';
 
 const App = () => {
   const {initializing} = useAuthContext();
