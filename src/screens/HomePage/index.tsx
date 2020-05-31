@@ -13,7 +13,7 @@ import {
   Icon,
   Text,
 } from 'native-base';
-import {useAuthContext} from '../../Contexts/AuthContext';
+import {useAuthContext} from '../../context/AuthContext';
 
 const HomePage = () => {
   const {signOut} = useAuthContext();

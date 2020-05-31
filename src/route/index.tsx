@@ -1,9 +1,9 @@
 import React from 'react';
 import {Router, Scene} from 'react-native-router-flux';
-import HomePage from '../Pages/HomePage';
+import HomePage from '../screens/HomePage';
 // import AnatomyExample from '../Pagess/AnatomyExample';
-import {useAuthContext} from '../Contexts/AuthContext';
-import FormLogin from '../Pages/Login';
+import {useAuthContext} from '../context/AuthContext';
+import FormLogin from '../screens/Login';
 
 const Routes = () => {
   const {user} = useAuthContext();

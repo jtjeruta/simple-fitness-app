@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Text, Form, Item as FormItem, Input, Label} from 'native-base';
-import {useAuthContext} from '../../Contexts/AuthContext';
+import {useAuthContext} from '../../context/AuthContext';
 
 const LoginPage = () => {
   const {signIn, signUp} = useAuthContext();
