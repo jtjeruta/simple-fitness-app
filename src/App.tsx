@@ -1,7 +1,7 @@
 import React from 'react';
 import {StatusBar, View, Text} from 'react-native';
 import {useAuthContext, AuthContextProvider} from './Contexts/AuthContext';
-// import Routes from './Routes';
+import Routes from './Routes';
 
 const App = () => {
   const {initializing, user} = useAuthContext();
@@ -9,20 +9,20 @@ const App = () => {
     return null;
   }
 
-  if (!user) {
-    return (
-      <View>
-        <Text>Login</Text>
-      </View>
-    );
-  }
+  // if (!user) {
+  //   return (
+  //     <View>
+  //       <Text>Login</Text>
+  //     </View>
+  //   );
+  // }
 
   return (
     <>
       <StatusBar barStyle="dark-content" />
       {/* <SafeAreaView> */}
-      {/* <Routes /> */}
-      <Text>Welcome {user.email}</Text>
+      {/* <Text>Welcome {user.email}</Text> */}
+      <Routes />
       {/* </SafeAreaView> */}
     </>
   );

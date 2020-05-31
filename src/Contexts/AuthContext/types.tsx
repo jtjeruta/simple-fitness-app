@@ -1,7 +1,9 @@
+import {FirebaseAuthTypes} from '@react-native-firebase/auth';
+
 export type Context = {
   initializing: boolean;
-  user: any;
-  signIn: any;
-  signUp: any;
-  signOut: any;
+  user: FirebaseAuthTypes.User | null;
+  signIn: (email: string, password: string) => void;
+  signUp: (email: string, password: string) => void;
+  signOut: () => void;
 };

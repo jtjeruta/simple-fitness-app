@@ -5,14 +5,14 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import auth from '@react-native-firebase/auth';
+import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import {Context} from './types';
 
 const AuthContext = createContext<any>({});
 
 const AuthContextProvider: FunctionComponent = props => {
   const [initializing, setInitializing] = useState<boolean>(true);
-  const [user, setUser] = useState<any>();
+  const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
 
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
@@ -20,17 +20,16 @@ const AuthContextProvider: FunctionComponent = props => {
   }, []);
 
   // Handle user state changes
-  function onAuthStateChanged(curUser: any) {
+  function onAuthStateChanged(curUser: FirebaseAuthTypes.User | null) {
     setUser(curUser);
     if (initializing) {
       setInitializing(false);
     }
   }
 
-  function signIn() {
+  function signIn(email: string, password: string) {
     auth()
-      // .createUserWithEmailAndPassword(
-      .signInWithEmailAndPassword('test123@gmail.com', 'SuperSecretPassword!')
+      .signInWithEmailAndPassword(email, password)
       .then(() => {
         console.log('User account created & signed in!');
       })
@@ -47,12 +46,9 @@ const AuthContextProvider: FunctionComponent = props => {
       });
   }
 
-  function signUp() {
+  function signUp(email: string, password: string) {
     auth()
-      .createUserWithEmailAndPassword(
-        'test123@gmail.com',
-        'SuperSecretPassword!',
-      )
+      .createUserWithEmailAndPassword(email, password)
       .then(() => {
         console.log('User account created & signed in!');
       })
