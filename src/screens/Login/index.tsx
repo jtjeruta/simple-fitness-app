@@ -7,9 +7,10 @@ import {useAuthContext} from '../../contexts/AuthContext';
 const LoginPage = () => {
   const {theme} = useThemeContext();
   const {signIn} = useAuthContext();
-  // TODO: add react-hook-form instead
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [error, setError] = useState<string | undefined>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   return (
     <View style={styles.container}>
@@ -27,9 +28,11 @@ const LoginPage = () => {
             color: theme.colors ? theme.colors.primary : undefined,
           }}
           onChangeText={value => setEmail(value)}
+          errorMessage={error ? error : undefined}
         />
         <Input
           placeholder="Password"
+          secureTextEntry
           leftIcon={{
             type: 'font-awesome',
             name: 'key',
@@ -40,7 +43,13 @@ const LoginPage = () => {
         <Button
           title="Sign-in"
           buttonStyle={styles.button}
-          onPress={() => signIn(email, password)}
+          onPress={async () => {
+            setLoading(true);
+            const msg = await signIn(email, password);
+            setLoading(false);
+            !!msg && setError(msg);
+          }}
+          loading={loading}
         />
         <Button title="Sign-up" />
       </Card>

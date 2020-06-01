@@ -27,27 +27,26 @@ const AuthContextProvider: FunctionComponent = props => {
     }
   }
 
-  function signIn(email: string, password: string) {
-    auth()
+  async function signIn(email: string, password: string) {
+    let result;
+    await auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        // eslint-disable-next-line no-console
-        console.log('User account created & signed in!');
-      })
       .catch(error => {
-        if (error.code === 'auth/email-already-in-use') {
-          // eslint-disable-next-line no-console
-          console.log('That email address is already in use!');
+        switch (error.code) {
+          case 'auth/user-not-found':
+            result = 'User not found.';
+            break;
+          case 'auth/invalid-email':
+            result = 'Invalid email';
+            break;
+          case 'auth/wrong-password':
+            result = 'Wrong email or password';
+            break;
+          default:
+            result = error.code;
         }
-
-        if (error.code === 'auth/invalid-email') {
-          // eslint-disable-next-line no-console
-          console.log('That email address is invalid!');
-        }
-
-        // eslint-disable-next-line no-console
-        console.error(error);
       });
+    return result;
   }
 
   function signUp(email: string, password: string) {
